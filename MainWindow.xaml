@@ -1,0 +1,43 @@
+﻿<Window x:Class="VoorbeeldVoorLennard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VoorbeeldVoorLennard"
+        mc:Ignorable="d"
+        Title="LSMuziek" Height="450" Width="800">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition  />
+            <RowDefinition  />
+
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Import" Click="Import_Click"/>
+                    <MenuItem Header="_Exit" Click="Exit_Click"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+
+        <!--Grid met 3 rijen en 3 kolommen, kun je verandere voor meer knoppen. Kan dit zelfs vanuit code aangeven indien nodig.-->
+        <UniformGrid Rows="4" Columns="4"  x:Name="ContentGridje" Grid.Row="1"  Grid.ColumnSpan="2" Margin="0,0,0,0.5">
+            
+        </UniformGrid>
+
+        <UniformGrid Rows="3" Columns="3" x:Name="EigenGridje" Grid.Row="1" Margin="0,199,0,2.5" Grid.RowSpan="2" />
+        <!--Weet niet of beide behavior dingen nodig zijn, maar kreeg anders een fout ofzo-->
+        <MediaElement x:Name="MediaDinges"  LoadedBehavior="Manual" UnloadedBehavior="Manual" Grid.ColumnSpan="2" Margin="0,422,0,0.5" />
+
+    </Grid>
+
+</Window>
+ 
